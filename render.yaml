@@ -3,7 +3,7 @@ services:
     name: milky-produto-atual
     env: python
     plan: starter
-    schedule: "10 19 * * *"  # ⏰ 19h10 UTC = 16h10 Brasil
+    schedule: "20 19 * * *"  # ⏰ 19h10 UTC = 16h10 Brasil
     buildCommand: "pip install -r requirements.txt"
     startCommand: "api_linx_azure.py"
     envVars:
