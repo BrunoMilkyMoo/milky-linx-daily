@@ -1,0 +1,23 @@
+services:
+  - type: cron
+    name: milky-produto-atual
+    env: python
+    plan: starter
+    schedule: "10 19 * * *"  # ⏰ 19h10 UTC = 16h10 Brasil
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "api_linx_azure.py"
+    envVars:
+      - key: DB_SERVER
+        value: milky-api-server.database.windows.net
+      - key: DB_NAME
+        value: milky_api
+      - key: DB_USER
+        value: admin_milky
+      - key: DB_PASS
+        value: BMvvPP@4025@
+      - key: EMAIL_FROM
+        value: diretoria@milkymoo.com.br
+      - key: EMAIL_PASS
+        value: MilkyMoo20
+      - key: EMAIL_TO
+        value: bruno@milkymoo.com.br
